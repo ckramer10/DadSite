@@ -1,0 +1,105 @@
+@import '../../styles/global.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navBar {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+
+  .navTopWrapper {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    .navHeader {
+      display: flex;
+      font-size: 20px;
+
+      a {
+         text-decoration: none;
+          color: black;
+       }
+    }
+
+    .desktopNavLinks {
+      display: none;
+    }
+
+    .toggleIcon {
+      color: black;
+      font-size: 24px;
+      z-index: 100;
+
+      &.active {
+        color: white;
+        font-size: 25px;
+      }
+    }
+  }
+
+  .navDropdown {
+    .navLinks {
+      position: absolute;
+      display: flex;
+      background: gray;
+      width: 100%;
+      overflow:hidden;
+      height:0;
+      -webkit-transition:height 200ms ease-in;
+      -moz-transition:height 200ms ease-in;
+      -o-transition:height 200ms ease-in;
+      transition:height 200ms ease-in;
+
+      &.active {
+        height: 100%;
+      }
+
+
+      ul {
+        list-style-type: none;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+
+        li {
+          text-align: center;
+          margin: 15px auto;
+
+          &:not(:last-child) {
+          }
+
+          &:hover {
+
+          }
+
+          a {
+            text-decoration: none;
+            font-size: 30px;
+            color: white;
+            font-family: 'Josefin Sans', sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .navBar {
+    .navTopWrapper {
+      padding: 0;
+    }
+  }
+}

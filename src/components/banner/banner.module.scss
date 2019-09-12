@@ -1,0 +1,31 @@
+.bannerContainer {
+  display: flex;
+  justify-content: center;
+  background: #7395AE;
+
+  .contentContainer {
+    display: flex;
+    text-align: center;
+    color: white;
+
+    .textContainer {
+      .name {
+        font-family: 'Pacifico', cursive;
+        margin-top: 15px;
+      }
+
+      .occupation {
+        margin-top: 10px;
+      }
+
+      .location {
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .imageContainer {
+      display: flex;
+    }
+  }
+}
