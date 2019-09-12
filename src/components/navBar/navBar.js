@@ -26,7 +26,7 @@ const NavBar = ({ isNavOpen, dispatch }) => {
 
   return (
     <div className="navBar">
-        <div className="navTopWrapper">
+        <div className={classnames('navTopWrapper', {'active' : isNavOpen })}>
             <h1 className="navHeader"><Link to={"/"}>Peter Kramer</Link></h1>
             <ul className="desktopNavLinks">
                 <li>
@@ -42,7 +42,7 @@ const NavBar = ({ isNavOpen, dispatch }) => {
                     <Link to="/contact">Contact</Link>
                 </li>
             </ul>
-            <FontAwesomeIcon className={classnames('toggleIcon', {'active' : isNavOpen} )} id="toggleIcon"  icon={icon} />
+            <FontAwesomeIcon className={classnames('toggleIcon', {'active' : isNavOpen })} id="toggleIcon"  icon={icon} />
         </div>
         <div className="navDropdown">
             <div className="navLinks" id="navLinks">

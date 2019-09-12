@@ -7,6 +7,7 @@
 }
 
 .navBar {
+  height: 50px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -17,11 +18,32 @@
     height: 50px;
     width: 100%;
     display: flex;
+    justify-self: center;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     max-width: 1280px;
     margin: 0 auto;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    z-index: 1000;
+
+  &.active {
+    background: gray;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+
+    .navHeader {
+      a {
+        transition: color 1000ms 50ms;
+        color: white;
+      }
+    }
+  }
 
     .navHeader {
       display: flex;
@@ -29,7 +51,8 @@
 
       a {
          text-decoration: none;
-          color: black;
+         transition: color 1000ms 50ms;
+         color: black;
        }
     }
 
@@ -57,10 +80,10 @@
       width: 100%;
       overflow:hidden;
       height:0;
-      -webkit-transition:height 200ms ease-in;
-      -moz-transition:height 200ms ease-in;
-      -o-transition:height 200ms ease-in;
-      transition:height 200ms ease-in;
+      -webkit-transition:height 300ms ease-in;
+      -moz-transition:height 300ms ease-in;
+      -o-transition:height 300ms ease-in;
+      transition:height 300ms ease-in;
 
       &.active {
         height: 100%;
@@ -102,5 +125,14 @@
     .navTopWrapper {
       padding: 0;
     }
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
