@@ -8,17 +8,16 @@
 
 .navBar {
   height: 50px;
+  transition: background-color 1000ms;
   background-color: white;
   display: flex;
   flex-direction: column;
 
   .navTopWrapper {
-    position: absolute;
-    top: 0;
+    position: relative;
     height: 50px;
     width: 100%;
     display: flex;
-    justify-self: center;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
@@ -30,29 +29,16 @@
     animation-duration: 1s;
     z-index: 1000;
 
-  &.active {
-    background: gray;
-    opacity: 1;
-    animation-name: fadeInOpacity;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-
-    .navHeader {
-      a {
-        transition: color 1000ms 50ms;
-        color: white;
-      }
-    }
-  }
-
     .navHeader {
       display: flex;
       font-size: 20px;
 
       a {
-         text-decoration: none;
-         transition: color 1000ms 50ms;
-         color: black;
+          font-size: 24px;
+          font-family: 'Permanent Marker', cursive;
+          text-decoration: none;
+          transition: color 1000ms 50ms;
+          color: black;
        }
     }
 
@@ -89,20 +75,18 @@
         height: 100%;
       }
 
-
       ul {
         list-style-type: none;
         display:flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: 100%;
+        z-index: 1000;
 
         li {
           text-align: center;
           margin: 15px auto;
 
-          &:not(:last-child) {
-          }
 
           &:hover {
 
@@ -112,8 +96,28 @@
             text-decoration: none;
             font-size: 30px;
             color: white;
-            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'Permanent Marker', cursive;
           }
+        }
+      }
+    }
+  }
+
+  &.active {
+    background-color: gray;
+    transition: none;
+
+    .navTopWrapper {
+      background: gray;
+      opacity: 1;
+      animation-name: fadeInOpacity;
+      animation-timing-function: ease-in;
+      animation-duration: 2s;
+
+      .navHeader {
+        a {
+          transition: color 1000ms 50ms;
+          color: white;
         }
       }
     }

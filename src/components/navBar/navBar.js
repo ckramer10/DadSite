@@ -25,8 +25,8 @@ const NavBar = ({ isNavOpen, dispatch }) => {
   const icon = isNavOpen ? faTimesCircle : faBars;
 
   return (
-    <div className="navBar">
-        <div className={classnames('navTopWrapper', {'active' : isNavOpen })}>
+    <div className={classnames('navBar', {'active' : isNavOpen })}>
+        <div className="navTopWrapper">
             <h1 className="navHeader"><Link to={"/"}>Peter Kramer</Link></h1>
             <ul className="desktopNavLinks">
                 <li>
